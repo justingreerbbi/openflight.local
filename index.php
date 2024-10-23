@@ -17,6 +17,10 @@
 <div id="map"></div>
 
 <script>
+
+    /**
+     * Global Variables.
+     */
     var map;
     var currentLocation = [-81.6944, 41.4993];
     var current_flight_markers = [];
@@ -38,21 +42,32 @@
         console.error('Geolocation is not supported by this browser.');
     }
 
+    /**
+     * Load the map and set the map options.
+     */
     function load_map() {
         mapboxgl.accessToken = '{your-map-box-key}';
         map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: currentLocation, // starting position [lng, lat]
-            zoom: 9, // starting zoom
+            container: 'map', 
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: currentLocation,
+            zoom: 9,
             hash: true
         });
 
+        /**
+         * Set the center of the map to the current location on moveend event.
+         */
         map.on('moveend', function (e) {
             var mapCenter = map.getCenter();
             userLocation = [mapCenter.lng, mapCenter.lat];
         });
 
+        /**
+         * On Map Load Event.
+         * 
+         * This adds the flight markers to the map.
+         */
         map.on('load', function() {
             map.addSource('current_flight_markers', {
                 type: 'geojson',
@@ -61,7 +76,6 @@
                     features: current_flight_markers
                 }
             });
-
             map.addLayer({
                 id: 'current_flight_markers',
                 type: 'symbol',
@@ -106,8 +120,11 @@
             get_flight_data();
         });
 
+        /**
+         * Load the custom plane marker image.
+         */
         map.loadImage(
-            'assets/plane.png',
+            'assets/markers/plane.png',
             (error, image) => {
                 if (error) throw error;
                 map.addImage('custom-marker', image);
