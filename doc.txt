@@ -1,0 +1,18 @@
+== Simple Flight Tracker ==
+
+The idea of this project is to desing a simple flight tracker with basic features like filter, mapping, flight data, etc.
+It would also be great if the project can have some sort of alerts and notifications.
+
+1.0.0 Notes.
+This version is a basic full screen map and displays avaliable aircraft in the air in the viewport.
+
+- Uses MapBox SDK for mapping
+- Uses Airplane.live API for flight data.
+
+Example API: https://api.airplanes.live/v2/point/40.9933824/-81.6097118/250
+
+Features include:
+
+- Mapping.
+- Live on screen flights.
+- Click on to show flight data.
