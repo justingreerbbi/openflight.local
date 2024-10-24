@@ -10,8 +10,8 @@ The goal of this project is to keep things super simple while providing a free w
 
 The webste uses Mapbox as the Map provider. You will need to create a free account with Mapbox if you do not have an account already.
 
-**Mapbox Account:** [https://account.mapbox.com/](https://account.mapbox.com/)
-**Create a Mapbox Token:** [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
+1. **Mapbox Account:** [https://account.mapbox.com/](https://account.mapbox.com/)
+2. **Create a Mapbox Token:** [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
 
 ### Step 2
 
