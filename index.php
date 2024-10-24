@@ -61,7 +61,7 @@
          */
         map.on('moveend', function (e) {
             var mapCenter = map.getCenter();
-            userLocation = [mapCenter.lng, mapCenter.lat];
+            currentLocation = [mapCenter.lng, mapCenter.lat];
         });
 
         /**
@@ -157,10 +157,10 @@
             type: 'GET',
             data: {
                 action: 'get_flight_data',
-                coords: userLocation
+                coords: currentLocation
             },
             success: function(response) {
-                var flight_data = JSON.parse(response);
+                var flight_data = response;
                 for (var i = 0; i < flight_data.flight_data.length; i++) {
                     current_flight_markers.push({
                         type: 'Feature',
