@@ -26,3 +26,10 @@ Copy the token from your Mapbox account and update the mapbox token in the index
 ## Contributing
 
 I am always open to pull requests for improvements, bug fixes, etc. In you do want to contribute, please send a pull request to this repo. Any help provided is always greatly appreciated.
+
+## ToDo's
+
+-   Add Turf.js
+-   Add alerts for aircraft that enter a flagged zone. To inlcude specific owner or aircraft type.
+-   Add UI for map options.
+-   Update the ajax query to auto calulate radius based on map viewport.
