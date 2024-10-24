@@ -21,6 +21,6 @@ Download the contents of this repo and place it in the root of your webiste dire
 
 Copy the token from your Mapbox account and update the mapbox token in the index.php file.
 
-### Contributing
+## Contributing
 
 I am always open to pull requests for improvements, bug fixes, etc. In you do want to contribute, please send a pull request to this repo. Any help provided is always greatly appreciated.
