@@ -7,7 +7,8 @@
 
 header( 'Content-Type: application/json' );
 
-$military_filter = true;
+$military_filter = false;
+$police_filter   = true;
 
 $category = array(
 	'A1' => 'Airplane',
@@ -54,8 +55,15 @@ if ( $military_filter ) {
 			$returned_data[] = $flight;
 		}
 	}
-} else {
-	$returned_data = $flight_data;
+}
+
+// Police filter will just search each flight's description for "police".
+if ( $police_filter ) {
+	foreach ( $flight_data as $flight ) {
+		if ( stripos( strtolower( $flight['ownOp'] ), 'police' ) !== false ) {
+			$returned_data[] = $flight;
+		}
+	}
 }
 
 echo json_encode(

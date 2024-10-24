@@ -3,6 +3,7 @@
 The goal of this project is to keep things super simple while providing a free way to display flights on a map. Currently this project is crazy simple but there are plans to keep improving it over time.
 
 1\. US Military Filter \(hard coded boolean\)
+2\. Police Filter \(hard coded boolean\)
 
 ![alt text](https://github.com/justingreerbbi/opensource-flight-radar/blob/main/Screenshot1.png?raw=true)
 
