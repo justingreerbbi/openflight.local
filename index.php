@@ -24,6 +24,7 @@
     var map;
     var currentLocation = [-81.6944, 41.4993];
     var current_flight_markers = [];
+    var update_timer = 5000; // 5 seconds
 
     /**
      * Request and set the current users location on the map.
@@ -115,8 +116,9 @@
              */
             const timer = setInterval(() => {
                 get_flight_data();
-            }, 5000);
+            }, update_timer);
 
+            // Initial Load of Flight Data.
             get_flight_data();
         });
 
@@ -131,6 +133,9 @@
         });
     }
 
+    /**
+     * Update the flight markers on the map.
+     */
     function update_flight_markers_on_map(){
         map.getSource('current_flight_markers').setData({
             type: 'FeatureCollection',
@@ -138,9 +143,15 @@
         });
     }
 
+    /**
+     * Get the flight data from the server using AJAX.
+     */
     function get_flight_data() {
-        current_flight_markers = []; // Reset.
-        //map.getSource('current_flight_markers').setData(current_flight_markers);
+
+        // Clear the current flight markers.
+        current_flight_markers = [];
+
+        // Ajax Request to get the flight data.
         $.ajax({
             url: 'ajax.php',
             type: 'GET',
